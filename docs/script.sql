@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS hotelreservas;
+USE hotelreservas;
+
+CREATE TABLE Quarto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero VARCHAR(191) NOT NULL,
+    tipo VARCHAR(191) NOT NULL
+);
+
+CREATE TABLE Reserva (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    hospede VARCHAR(191) NOT NULL,
+    dataEntrada DATETIME NOT NULL,
+    dataSaida DATETIME NOT NULL,
+    quartoId INT NOT NULL,
+    FOREIGN KEY (quartoId) REFERENCES Quarto(id)
+);

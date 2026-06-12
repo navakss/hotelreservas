@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Pavan</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>Hotel<br/>Pavan</h2>
+    </div>
+
+    <nav>
+      <a href="index.html">Quartos</a>
+      <a class="active" href="reservas.html">Reservas</a>
+      <a href="#">Sobre</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <header class="topbar">
+      <h1 class="titulo">Reservas do Quarto</h1>
+      <button class="btn-primary" onclick="abrirModalReserva()">+ Nova Reserva</button>
+    </header>
+
+    <section class="card">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Hóspede</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabela-reservas"></tbody>
+
+      </table>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- MODAL RESERVA -->
+<div class="modal" id="modal-reserva">
+  <div class="modal-box">
+    <h2>Cadastrar Reserva</h2>
+
+    <input id="hospede" placeholder="Nome do hóspede" />
+    <input id="entrada" type="date" />
+    <input id="saida" type="date" />
+
+    <div class="modal-actions">
+      <button class="btn-gray" onclick="fecharModalReserva()">Cancelar</button>
+      <button class="btn-primary" onclick="criarReserva()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
